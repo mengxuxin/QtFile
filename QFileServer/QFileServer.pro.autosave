@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2014-10-08T21:52:58
+# Project created by QtCreator 2014-10-09T14:23:58
 #
 #-------------------------------------------------
 
@@ -8,11 +8,14 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = QFileClient
+TARGET = QFileServer
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
-        widget.cpp
+        Widget.cpp \
+    MyTcpServer.cpp \
+    FortuneThread.cpp
 
-HEADERS  += widget.h
+HEADERS  += Widget.h \
+    MyTcpServer.h \
+    FortuneThread.h

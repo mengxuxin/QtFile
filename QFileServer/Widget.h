@@ -2,9 +2,11 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <QLineEdit>
 #include <QPushButton>
 #include <QtNetwork>
+#include <QLabel>
+#include <QLineEdit>
+#include "MyTcpServer.h"
 
 class Widget : public QWidget
 {
@@ -15,15 +17,13 @@ public:
     ~Widget();
 
 private slots:
-    void login();
-    void logout();
+    void updateLabel(const QByteArray &e);
 
 private:
-    QLineEdit *m_ServerIP;
-    QLineEdit *m_ServerPort;
-    QPushButton *m_connect;
-    QPushButton *m_disconnect;
-    QTcpSocket *m_clientSocket;
+    MyTcpServer m_tcpServer;
+    QLabel *m_label;
+    QPushButton *m_quitButton;
+    QLineEdit *m_lineEdit;
 };
 
 #endif // WIDGET_H
